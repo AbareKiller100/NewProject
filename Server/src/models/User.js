@@ -11,7 +11,7 @@ module.exports = (sequelize) => {
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true,
       },
-      fullName: {
+      firstName: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -28,10 +28,19 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: true
       },
+      image: {
+        type: DataTypes.STRING,
+        allowNull: true,
+      },
       isThirdPartyAuth: {
         type: DataTypes.BOOLEAN,
         defaultValue: false,
         allowNull: false
+      },
+      isBanned: { 
+        type: DataTypes.BOOLEAN,
+        allowNull: true,
+        defaultValue: false,
       }
     },
     {

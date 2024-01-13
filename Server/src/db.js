@@ -48,8 +48,8 @@ Courses.belongsTo(Category);
 Instructors.hasMany(Courses);
 Courses.belongsTo(Instructors);
 
-Instructors.belongsToMany(Affiliations, { through: 'Instructor_Affiliation' });
-Affiliations.belongsToMany(Instructors, { through: 'Instructor_Affiliation' });
+Instructors.hasOne(Affiliations);
+Affiliations.belongsTo(Instructors);
 
 Users.belongsToMany(Courses, { through: 'User_Course' });
 Courses.belongsToMany(Users, { through: 'User_Course' });
