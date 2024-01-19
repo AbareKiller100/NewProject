@@ -17,7 +17,19 @@ const getAllCourses= async ()=>{
 }
  
 const getCourseByID= async (id)=>{
-    const course= await Course.findByPk(id);
+    const course= await Course.findByPk(id, {
+        include:{
+            model: Category,
+            attributes:['name'],
+            through:{
+                attribute:[]
+            }
+        }
+    });
+
+    if(!course){
+        throw new Error('Este curso no existe');
+    }
 
     return course;
 }

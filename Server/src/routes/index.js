@@ -6,6 +6,7 @@ const coursesRouter= require('./CoursesRouter')
 const categoryRouter= require('./CategoryRoutes')
 const instructorsRouter= require('./InstructorRoutes')
 const userRouter= require('./UserRouter')
+const affiliationRouter= require('./AffiliationRoutes')
 
 const router = Router();
 // Configurar los routers
@@ -15,5 +16,6 @@ router.use('/Course', coursesRouter);
 router.use('/Category', categoryRouter);
 router.use('/Instructor', instructorsRouter);
 router.use('/User', userRouter);
+router.use('/Affiliation', affiliationRouter);
 
 module.exports= router;

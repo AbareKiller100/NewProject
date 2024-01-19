@@ -1,4 +1,4 @@
-const {Course, Category, Instructor} = require('../../db');
+const {Course, Category, Instructors} = require('../../db');
 
 const createNewCourse= async (form)=>{
     const {title, description, modules, cost, image }= form;
@@ -21,7 +21,7 @@ const createNewCourse= async (form)=>{
     }
 
     if(form.instructor){
-        const instructor = await Instructor.findByPk(form.instructor);
+        const instructor = await Instructors.findByPk(form.instructor);
         if(!instructor){
             throw new Error('Este instructor no está registrado')
         } else{
